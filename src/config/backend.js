@@ -10,22 +10,15 @@ const BackendConfig = {
   
   // Production (Vercel deployment)
   production: {
-    httpUrl: 'https://your-backend.vercel.app',
-    wsUrl: 'wss://your-backend.vercel.app/ws',
-    healthUrl: 'https://your-backend.vercel.app/health'
+     httpUrl: 'https://flyingcarbackend.onrender.com',
+    wsUrl: 'wss://flyingcarbackend.onrender.com/ws',
+    healthUrl: 'https://flyingcarbackend.onrender.com/health'
   }
 };
 
-// Auto-detect environment
-const isDevelopment = window.location.hostname === 'localhost' || 
-                     window.location.hostname === '127.0.0.1' ||
-                     window.location.hostname.includes('127.0.0.1') ||
-                     window.location.port === '5173' ||
-                     window.location.port === '5174' ||
-                     window.location.port === '3000';
 
 // Export current configuration
-const currentConfig = isDevelopment ? BackendConfig.development : BackendConfig.production;
+const currentConfig = BackendConfig.development;
 
 export const BACKEND_CONFIG = {
   ...currentConfig,
