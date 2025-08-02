@@ -1,0 +1,121 @@
+.game-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #87CEEB 0%, #98FB98 100%);
+}
+
+.game-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.controls-info {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.controls-info h3 {
+  margin: 0 0 15px 0;
+  color: #00ff88;
+  font-size: 1.5em;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.controls {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.controls p {
+  margin: 5px 0;
+}
+
+.controls strong {
+  color: #00ff88;
+}
+
+.connection-status {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.8);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 255, 136, 1);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.8);
+  }
+}
+
+/* Loading states */
+.status-indicator.connecting {
+  background: #ffaa00;
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.8);
+}
+
+.status-indicator.disconnected {
+  background: #ff4444;
+  box-shadow: 0 0 15px rgba(255, 68, 68, 0.8);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .ui-overlay {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .controls-info {
+    padding: 15px;
+  }
+  
+  .controls-info h3 {
+    font-size: 1.2em;
+  }
+  
+  .controls {
+    font-size: 0.8em;
+  }
+}
