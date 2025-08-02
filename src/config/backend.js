@@ -27,18 +27,8 @@ export const BACKEND_CONFIG = {
   getWebSocketUrl: (roomId) => {
     return `${currentConfig.wsUrl}?room=${roomId}`;
   },
-  
-  // Environment info
-  environment: isDevelopment ? 'development' : 'production',
-  isDevelopment,
-  isProduction: !isDevelopment
+
 };
 
-// Log current configuration (for debugging)
-console.log('🔧 Backend Configuration:', {
-  environment: BACKEND_CONFIG.environment,
-  httpUrl: BACKEND_CONFIG.httpUrl,
-  wsUrl: BACKEND_CONFIG.wsUrl
-});
 
 export default BACKEND_CONFIG; 
